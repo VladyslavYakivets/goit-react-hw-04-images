@@ -13,10 +13,11 @@ export const Modal = ({ closeModal, modalImgUrl }) => {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+ useEffect(() => {
+   window.addEventListener('keydown', handleKeyDown);
+   return () => window.removeEventListener('keydown', handleKeyDown);
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, []);
 
   return (
     <div className="Overlay" onClick={handleOverlayClick || handleKeyDown}>
